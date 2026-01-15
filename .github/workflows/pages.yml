@@ -31,12 +31,14 @@ jobs:
         run: |
           mkdir -p _site/x86_64
           
-          # Copy any built packages if they exist
-          if [ -d "packages/x86_64" ] && [ "$(ls -A packages/x86_64 2>/dev/null)" ]; then
-            cp -r packages/x86_64/* _site/x86_64/
-          else
-            # Create placeholder
-            echo "No packages yet" > _site/x86_64/README.txt
+          # Copy any built packages if they exist (excluding .gitkeep)
+          if [ -d "packages/x86_64" ]; then
+            find packages/x86_64 -type f ! -name '.gitkeep' -exec cp {} _site/x86_64/ \; 2>/dev/null || true
+          fi
+          
+          # Create placeholder if no packages
+          if [ ! "$(ls -A _site/x86_64 2>/dev/null)" ]; then
+            echo "No packages yet. Add packages to see them here!" > _site/x86_64/README.txt
           fi
           
           # Create main index page
