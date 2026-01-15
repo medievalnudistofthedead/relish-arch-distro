@@ -25,7 +25,12 @@ for pkgbuild_dir in "$PKGBUILDS_DIR"/*/; do
         echo ""
         echo "Building: $package_name"
         
-        if "$SCRIPT_DIR/build-package.sh" "$pkgbuild_dir"; then
+        set +e  # Temporarily disable exit on error
+        "$SCRIPT_DIR/build-package.sh" "$pkgbuild_dir"
+        BUILD_EXIT=$?
+        set -e  # Re-enable exit on error
+        
+        if [ $BUILD_EXIT -eq 0 ]; then
             ((BUILD_COUNT++))
             echo "✓ $package_name built successfully"
         else
