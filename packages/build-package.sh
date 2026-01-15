@@ -38,7 +38,16 @@ makepkg -sf --noconfirm
 
 # Move built packages to output directory
 echo "Moving packages to $OUTPUT_DIR..."
-mv *.pkg.tar.zst "$OUTPUT_DIR/" 2>/dev/null || true
+set +e  # Temporarily disable exit on error
+mv *.pkg.tar.zst "$OUTPUT_DIR/" 2>/dev/null
+EXIT_CODE=$?
+set -e  # Re-enable exit on error
+
+if [ $EXIT_CODE -eq 0 ]; then
+    echo "Packages moved successfully!"
+else
+    echo "Note: Some packages may not have been moved (this is normal for some PKGBUILDs)"
+fi
 
 echo "================================================"
 echo "Package built successfully!"
