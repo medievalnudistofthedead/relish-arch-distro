@@ -40,112 +40,112 @@ jobs:
           fi
           
           # Create main index page
-          cat > _site/index.html << 'HTMLEOF'
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Relish Arch Linux - Package Repository</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            max-width: 900px;
-            margin: 50px auto;
-            padding: 20px;
-            background: #1a1a1a;
-            color: #e0e0e0;
-            line-height: 1.6;
-        }
-        h1 { color: #6495ED; margin-bottom: 10px; }
-        h2 { color: #88C0D0; margin-top: 30px; }
-        code {
-            background: #2a2a2a;
-            padding: 2px 8px;
-            border-radius: 4px;
-            color: #88C0D0;
-            font-family: 'Courier New', monospace;
-        }
-        pre {
-            background: #2a2a2a;
-            padding: 15px;
-            border-radius: 5px;
-            overflow-x: auto;
-            border-left: 3px solid #6495ED;
-        }
-        .warning {
-            background: #3a2a1a;
-            padding: 15px;
-            border-radius: 5px;
-            border-left: 3px solid #D08770;
-            margin: 20px 0;
-        }
-        .success {
-            background: #1a3a2a;
-            padding: 15px;
-            border-radius: 5px;
-            border-left: 3px solid #A3BE8C;
-            margin: 20px 0;
-        }
-        a { color: #88C0D0; text-decoration: none; }
-        a:hover { color: #6495ED; text-decoration: underline; }
-        ul { padding-left: 20px; }
-        li { margin: 10px 0; }
-    </style>
-</head>
-<body>
-    <h1>🎮 Relish Arch Linux</h1>
-    <p><strong>Custom Arch Linux Distribution</strong> - Package Repository</p>
-    
-    <div class="success">
-        <strong>✅ Repository is live!</strong> You can now add this to your system.
-    </div>
-    
-    <h2>📦 How to Use This Repository</h2>
-    
-    <p>Add this repository to your <code>/etc/pacman.conf</code>:</p>
-    
-    <pre>[relish-repo]
-SigLevel = Optional TrustAll
-Server = https://medievalnudistofthedead.github.io/relish-arch-distro/$arch</pre>
-    
-    <p>Then update your package database:</p>
-    
-    <pre>sudo pacman -Sy</pre>
-    
-    <p>Install packages from this repository:</p>
-    
-    <pre>sudo pacman -S package-name</pre>
-    
-    <h2>🔗 Links</h2>
-    <ul>
-        <li><a href="https://github.com/medievalnudistofthedead/relish-arch-distro">📂 GitHub Repository</a></li>
-        <li><a href="x86_64/">📦 Browse Packages (x86_64)</a></li>
-        <li><a href="https://github.com/medievalnudistofthedead/relish-arch-distro#readme">📖 Documentation</a></li>
-    </ul>
-    
-    <h2>📋 Available Packages</h2>
-    <p>Check the <a href="x86_64/">x86_64 directory</a> for available packages. Currently building the repository!</p>
-    
-    <h2>🚀 Features</h2>
-    <ul>
-        <li>Pre-configured KDE Plasma & Hyprland desktop environments</li>
-        <li>Gaming ready with Steam, Wine, and Proton</li>
-        <li>Development tools for Go, Flutter, Python, C/C++</li>
-        <li>Performance optimized for AMD GPUs</li>
-        <li>Beautiful defaults with Tokyo & Catppuccin themes</li>
-    </ul>
-    
-    <div class="warning">
-        <strong>⚠️ Note:</strong> This is a custom repository. Packages are pre-built from AUR and custom sources.
-    </div>
-    
-    <footer style="margin-top: 50px; text-align: center; color: #666;">
-        <p>Built with ❤️ for Arch Linux</p>
-    </footer>
-</body>
-</html>
-HTMLEOF
+          cat > _site/index.html <<'EOF'
+          <!DOCTYPE html>
+          <html lang="en">
+          <head>
+              <meta charset="UTF-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <title>Relish Arch Linux - Package Repository</title>
+              <style>
+                  body {
+                      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                      max-width: 900px;
+                      margin: 50px auto;
+                      padding: 20px;
+                      background: #1a1a1a;
+                      color: #e0e0e0;
+                      line-height: 1.6;
+                  }
+                  h1 { color: #6495ED; margin-bottom: 10px; }
+                  h2 { color: #88C0D0; margin-top: 30px; }
+                  code {
+                      background: #2a2a2a;
+                      padding: 2px 8px;
+                      border-radius: 4px;
+                      color: #88C0D0;
+                      font-family: 'Courier New', monospace;
+                  }
+                  pre {
+                      background: #2a2a2a;
+                      padding: 15px;
+                      border-radius: 5px;
+                      overflow-x: auto;
+                      border-left: 3px solid #6495ED;
+                  }
+                  .warning {
+                      background: #3a2a1a;
+                      padding: 15px;
+                      border-radius: 5px;
+                      border-left: 3px solid #D08770;
+                      margin: 20px 0;
+                  }
+                  .success {
+                      background: #1a3a2a;
+                      padding: 15px;
+                      border-radius: 5px;
+                      border-left: 3px solid #A3BE8C;
+                      margin: 20px 0;
+                  }
+                  a { color: #88C0D0; text-decoration: none; }
+                  a:hover { color: #6495ED; text-decoration: underline; }
+                  ul { padding-left: 20px; }
+                  li { margin: 10px 0; }
+              </style>
+          </head>
+          <body>
+              <h1>🎮 Relish Arch Linux</h1>
+              <p><strong>Custom Arch Linux Distribution</strong> - Package Repository</p>
+              
+              <div class="success">
+                  <strong>✅ Repository is live!</strong> You can now add this to your system.
+              </div>
+              
+              <h2>📦 How to Use This Repository</h2>
+              
+              <p>Add this repository to your <code>/etc/pacman.conf</code>:</p>
+              
+              <pre>[relish-repo]
+          SigLevel = Optional TrustAll
+          Server = https://medievalnudistofthedead.github.io/relish-arch-distro/$arch</pre>
+              
+              <p>Then update your package database:</p>
+              
+              <pre>sudo pacman -Sy</pre>
+              
+              <p>Install packages from this repository:</p>
+              
+              <pre>sudo pacman -S package-name</pre>
+              
+              <h2>🔗 Links</h2>
+              <ul>
+                  <li><a href="https://github.com/medievalnudistofthedead/relish-arch-distro">📂 GitHub Repository</a></li>
+                  <li><a href="x86_64/">📦 Browse Packages (x86_64)</a></li>
+                  <li><a href="https://github.com/medievalnudistofthedead/relish-arch-distro#readme">📖 Documentation</a></li>
+              </ul>
+              
+              <h2>📋 Available Packages</h2>
+              <p>Check the <a href="x86_64/">x86_64 directory</a> for available packages. Currently building the repository!</p>
+              
+              <h2>🚀 Features</h2>
+              <ul>
+                  <li>Pre-configured KDE Plasma & Hyprland desktop environments</li>
+                  <li>Gaming ready with Steam, Wine, and Proton</li>
+                  <li>Development tools for Go, Flutter, Python, C/C++</li>
+                  <li>Performance optimized for AMD GPUs</li>
+                  <li>Beautiful defaults with Tokyo & Catppuccin themes</li>
+              </ul>
+              
+              <div class="warning">
+                  <strong>⚠️ Note:</strong> This is a custom repository. Packages are pre-built from AUR and custom sources.
+              </div>
+              
+              <footer style="margin-top: 50px; text-align: center; color: #666;">
+                  <p>Built with ❤️ for Arch Linux</p>
+              </footer>
+          </body>
+          </html>
+          EOF
       
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
