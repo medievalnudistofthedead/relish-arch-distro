@@ -81,3 +81,4 @@ This project is licensed under the MIT License - see [LICENSE](LICENSE) for deta
 - Based on [Arch Linux](https://archlinux.org/)
 - Built with [archiso](https://gitlab.archlinux.org/archlinux/archiso)
 - Inspired by [EndeavourOS](https://endeavouros.com/)
+
