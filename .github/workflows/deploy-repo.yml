@@ -1,10 +1,9 @@
 name: Deploy Repository
 
 on:
-  workflow_run:
-    workflows: ["Build Packages"]
-    types:
-      - completed
+  push:
+    branches:
+      - main
   workflow_dispatch:
 
 permissions:
@@ -15,7 +14,6 @@ permissions:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'workflow_dispatch' }}
     
     steps:
       - name: Checkout repository
@@ -84,7 +82,7 @@ jobs:
               
               <pre>[relish-repo]
 SigLevel = Optional TrustAll
-Server = https://yourusername.github.io/relish-arch-distro/$arch</pre>
+Server = https://medievalnudistofthedead.github.io/relish-arch-distro/$arch</pre>
               
               <p>Then update and install packages:</p>
               
@@ -97,7 +95,7 @@ sudo pacman -S package-name</pre>
               
               <h2>🔗 Links</h2>
               <ul>
-                  <li><a href="https://github.com/yourusername/relish-arch-distro">GitHub Repository</a></li>
+                  <li><a href="https://github.com/medievalnudistofthedead/relish-arch-distro">GitHub Repository</a></li>
                   <li><a href="x86_64/">Browse Packages (x86_64)</a></li>
               </ul>
               
